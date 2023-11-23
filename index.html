@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Agbalumo&family=Rubik:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <script src="app.js" defer></script>
+    <script src="style.js" defer></script>
+    <link rel="stylesheet" href="main.css">
+    <title>File Encrypt and Decrypt</title>
+
+</head>
+
+<body>
+    <div class="navbar1">
+        <div class="navleft"><span class="f1 headc">æEncrypt</span></div>
+        <div class="navburger f1" id="navburger">
+            <div class="burgerline"></div>
+            <div class="burgerline"></div>
+            <div class="burgerline"></div>
+        </div>
+        <div class="navright f2" id="navburgerOptions">
+            <span class="navBtns">Encrypt</span>
+            <span class="navBtns">Decrypt</span>
+            <span class="navBtns">About</span>
+            <!-- <span class="navBtns">Contact</span> -->
+        </div>
+    </div>
+    <div class="contain1">
+        <div class="containbox navShow">
+
+            <h3 class="f1">Encrypt</h3>
+
+            <div><input type="file" id="fileUploadE"></div>
+
+            <div class="keygeneratebox">
+                <input type="text" id="encryptionKeyE" placeholder="Enter encryption key"><input type="button" id="sugKeyBtn" value="Suggest Key">
+            </div>
+
+            <div><input type="button" id="encryptBtn" value="Encrypt & Show"></div>
+
+            <div class="outputbxParent">
+                <p class="outputbx" id="outputBoxE">Your Encrypted Text</p>
+            </div>
+
+            <div><input type="button" id="encryptNDownBtn" value="Encrypt & Download"></div>
+
+        </div>
+        <div class="containbox">
+
+            <h3 class="f1">Decrypt</h3>
+
+            <div><input type="file" id="fileUploadD"></div>
+
+            <div><input type="text" id="encryptionKeyD" placeholder="Enter encryption key"></div>
+
+            <div><input type="button" id="decryptBtn" value="Decrypt & Show"></div>
+
+            <div class="outputbxParent">
+                <p class="outputbx" id="outputBoxD">Your Decrypted Text</p>
+            </div>
+
+            <div><input type="button" id="decryptNDownBtn" value="Decrypt & Download"></div>
+        </div>
+
+        <div class="containbox">
+
+            <h3 class="f1">About</h3>
+
+            <div class="f2">
+                <ol class="aboutOl">
+                    <li>The function takes two parameters: <b>`text`</b> (the input text to be encrypted) and <b>`encryptionKey`</b> (a key used for encryption).</li>
+
+                    <li>It checks if the <b>`encryptionKey`</b> is 0. If so, it returns the original text without encryption.</li>
+
+                    <li>It initializes some variables:</li>
+
+                    <ul class="aboutUl">
+                        <!-- <li><b>skipValue</b> is set to 5 (though it's not used in the provided code).</li> -->
+                        <li><b>`encryptedText`</b> is an empty string that will store the encrypted result.</li>
+                        <li><b>`j`</b> is a counter variable initialized to 0.</li>
+                        <li><b>`keyLength`</b> stores the length of the encryption key.</li>
+                    </ul>
+
+                    <li>The function then iterates through each character in the input <b>`text`</b>.</li>
+
+                    <li>For each character, it performs the following operations:</li>
+                    <ul class="aboutUl">
+                        <li>It converts the character to its Unicode code point using <b>`char.charCodeAt(0)`</b>.</li>
+                        <li>It adds the Unicode code point of the current character to the Unicode code point of the corresponding character in the <b>`encryptionKey`</b>.</li>
+                    </ul>
+                    <li>The variable <b>`j`</b> is used to loop through the characters of the <b>`encryptionKey`</b>. If <b>`j`</b> reaches the end of the key, it wraps around to 0.</li>
+
+                    <li>The result is concatenated to the <b>`encryptionText`</b>.</li>
+
+                    <li>The final encrypted text is returned.</li>
+
+                </ol>
+                <p>This algorithm is relatively simple and <b>may not provide strong security</b>. It's always recommended to use established encryption libraries and algorithms for sensitive data.</p>
+            </div>
+
+        </div>
+
+        <!-- <div class="containbox">
+
+            <h3 class="f2">Contact</h3>
+
+        </div> -->
+    </div>
+    <div class="footer f2">@aekitsama</div>
+</body>
+
+</html>
