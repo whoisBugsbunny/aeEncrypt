@@ -9,6 +9,9 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Agbalumo&family=Rubik:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
+    <meta name="theme-color" content="#000000">
+    <link rel="manifest" href="/manifest.json">
+
     <script src="app.js" defer></script>
     <script src="style.js" defer></script>
     <link rel="stylesheet" href="main.css">
@@ -113,6 +116,19 @@
         </div> -->
     </div>
     <div class="footer f2">@aekitsama</div>
+
+    <script>
+        if ('serviceWorker' in navigator) {
+            navigator.serviceWorker.register('/service-worker.js')
+                .then(registration => {
+                    console.log('Service Worker registered with scope:', registration.scope);
+                })
+                .catch(error => {
+                    console.error('Service Worker registration failed:', error);
+                });
+        }
+    </script>
+
 </body>
 
 </html>
